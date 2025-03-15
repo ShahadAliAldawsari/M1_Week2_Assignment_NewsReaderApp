@@ -1,0 +1,27 @@
+<resources>
+
+    <string name="app_name">News Reader</string>
+    <string name="screen1">News Headlines</string>
+    <string name="screen2">News Details</string>
+
+    <string name="title_1">The Grand Mosque Security Operations Center uses the latest artificial intelligence technologies</string>
+    <string name="news_1">The Grand Mosque Security Operations Center is a key component of the security system for pilgrims, worshippers, and visitors. \n\nIt relies on the latest smart technologies and AI-based predictive capabilities, enhancing the safety of pilgrims, facilitating their movement, and providing them with the best services during the rituals. \n\nThe center utilizes high-resolution digital surveillance cameras and AI technologies capable of analyzing big data and predicting congestion. \n\nThis enables proactive decisions to reduce congestion and ensure smooth flow within the Grand Mosque, while also accurately relaying traffic reports. \n\nThe center\'s responsibilities include monitoring pilgrims from their arrival at the Grand Mosque until their departure, ensuring a safe and comfortable experience. \n\nIt offers a variety of services, including monitoring security, providing humanitarian and awareness support, and monitoring the overall situation around the clock.\n\n</string>
+    <string name="category_1">Technical</string>
+    <string name="date_1">13 Mar 2025</string>
+
+    <string name="title_2">Saudi Arabia celebrates \"Flag Day\" tomorrow, in pride of its national values</string>
+    <string name="news_2">Tomorrow, Tuesday, Ramadan 11, 1446 AH, corresponding to March 11, 2025 AD, the Kingdom of Saudi Arabia will celebrate \"Flag Day\" the day on which King Abdulaziz bin Abdulrahman Al Saud - may God have mercy on him - recognized the flag with its great connotations that point to monotheism, justice, strength, growth, and prosperity. \n\nThis date was on Dhu al-Hijjah 27, 1355 AH, corresponding to March 11, 1937 AD.\n\n</string>
+    <string name="category_2">National</string>
+    <string name="date_2">11 Mar 2025</string>
+
+    <string name="title_3">A global medical achievement: implanting an artificial heart pump without a chest incision using a robot</string>
+    <string name="news_3">King Faisal Specialist Hospital and Research Centre in Riyadh has achieved a new global medical milestone by performing the world\'s first fully robotic implantation of a HeartMate 3 artificial heart pump. The operation was performed on a 35-year-old patient. \n\nThe procedure, performed by a specialized robotic surgery team led by Dr. Firas Khalil, Head of the Cardiac Surgery Department at the hospital, significantly reduced the typical side effects of thoracotomy, such as scarring and pain, as well as the rate of complications and stress for the patient. \n\nThis resulted in a reduction in the patient\'s stay in intensive care to only four days, compared to an average of 26 days for similar traditional surgeries, which require a large chest incision and a longer recovery period of up to 63 days. \n\nDoctors expect the patient to be discharged from the hospital within ten days. \n\nThis achievement is part of a series of successes for King Faisal Specialist Hospital and Research Centre, having previously performed the world\'s first robotic heart transplant and the world\'s first robotic liver transplant. \n\nThese achievements reflect the hospital\'s commitment to providing innovative medical solutions that keep pace with the latest technological developments and consolidate its global leadership. \n\nIt is worth noting that King Faisal Specialist Hospital and Research Centre has been ranked first in the Middle East and Africa and 20th globally for the second consecutive year, among the top 250 academic healthcare institutions worldwide. \n\nIt was also named the most valuable healthcare brand in the Kingdom and the Middle East, according to the Brand Finance 2024 report, and was included in the list of the world\'s best smart hospitals for 2025, according to Newsweek magazine.\n\n</string>
+    <string name="category_3">Technical-Medical</string>
+    <string name="date_3">16 Jan 2025</string>
+
+    <string name="title_4">Cat owner leaves hilarious sign warning people about her \'actress\' pet</string>
+    <string name="news_4">The note, left by a cat owner outside an Iceland store in Liverpool, warns people not to feed the cat as she has a home and is an \'actress\' who loves attention. \n\nAn hilarious note penned by the owner of a fame-hungry cat has tickled social media users after it was shared online. \n\nPerched outside the Iceland supermarket on Liverpool\'s Penny Lane, the heartwarming message stated: \"Please do not feed the black and white cat. \n\nMy name is Lili and I have a home on Kenyon Rd. \n\nI am an actress\! I like attention\! I like food\! It is very kind of you, but please stop feeding me because I will spend less time at home. \n\nThank you\!" Alongside the message in the shared image sat the cat in question, Lili, a gorgeous black and white feline who seemingly had no plans to abandon her profitable perch near the store. \n\nThe picture and tale went viral on Reddit, amassing over 4,000 upvotes and numerous comments from individuals who\'d encountered the notable kitty\n\n</string>
+    <string name="category_4">Funny</string>
+    <string name="date_4">16 Oct 2024</string>
+
+</resources>
