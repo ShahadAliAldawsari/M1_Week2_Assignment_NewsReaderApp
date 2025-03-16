@@ -37,6 +37,11 @@ import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import androidx.navigation.toRoute
+import kotlinx.serialization.Serializable
 import androidx.compose.material3.ExperimentalMaterial3Api as ExperimentalMaterial3Api1
 
 
@@ -49,115 +54,61 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
+            val navCtrl =  rememberNavController()
             val isLightTheme = remember {mutableStateOf(value=true)}
             M1Week2AssignmentNewsReaderAppTheme(darkTheme = !isLightTheme.value) {
-
-                //this line used to check while designing the news item card
-                NewsItem(getAllNews()[2])
 
                 //this value will be added to the nestedScroll()
                 val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior(
                     state = rememberTopAppBarState()
                 )
-                val newsList = getAllNews()
 
-                Scaffold (
-                    modifier = Modifier
-                        /*this line will give wider screen by removing
-                         the top bar away when scrolling down and git it
-                         back when scrolling up*/
-                        .nestedScroll(scrollBehavior.nestedScrollConnection),
-                    // calling the top bar fun
-                    topBar = {
-                        PrimaryTopMenu(scrollBehavior = scrollBehavior,
-                            isLight = isLightTheme.value
-                        ){isLightTheme.value = !isLightTheme.value}
-                    }
-                ){
+                // navigating between screens
 
-                    // the body of the screen:
-                    // "paddingValues" will ensures proper padding between the top bar and the rest of the content
-                    paddingValues ->
-                    LazyColumn (modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(top = paddingValues.calculateTopPadding() + 14.dp),
-                    ) {
-                        items(items = newsList){
-                                news-> NewsItem(news)
+                // a well explained tutorial for the traditional way to implement navigation and passing values
+                    // https://www.youtube.com/watch?v=wJKwsI5WUI4
+
+                // a tutorial for the newest convenient way to implement navigation and passing values
+                    // https://www.youtube.com/watch?v=AIC_OFQ1r3k
+
+                NavHost(navController = navCtrl, startDestination = main_screen,
+                    builder = {
+                        composable<main_screen>{
+                            MainScreen(getAllNews(), isLightTheme, navCtrl)
+                        }
+
+                        composable<second_screen>{
+                            val args = it.toRoute<second_screen>()
+                            SecondScreen(getAllNews()[args.news_index], isLightTheme)
+
                         }
                     }
-                }
-
-
-                //this code used to check while designing the news detail screen
-                SecondScreen(getAllNews()[3], scrollBehavior, isLightTheme)
+                    )
 
             }
         }
     }
 }
 
-@ExperimentalMaterial3Api1 //to deal with this error: This material API is experimental and is likely to change or to be removed in the future.
-@Composable
-fun PrimaryTopMenu(
-    modifier: Modifier = Modifier,
-    scrollBehavior: TopAppBarScrollBehavior,
-    isLight: Boolean, onThemeToggle:()->Unit
-){
-    TopAppBar(
-        modifier = Modifier,
-//            .padding(horizontal = 8.dp),
-        scrollBehavior = scrollBehavior,
-        colors = TopAppBarDefaults.topAppBarColors(MaterialTheme.colorScheme.secondaryContainer), //secondaryContainer
-        title = {
-            Text(
-                text = UiText.StringResource(R.string.screen1).asString(),
-                style = MaterialTheme.typography.headlineMedium,
-                fontFamily = FontFamily.Serif,
-                fontWeight = FontWeight.SemiBold
-            )
-        },
-        //menu icon at the beginning of the bar
-        navigationIcon = {
-            Icon(
-                imageVector = Icons.Rounded.Menu,
-                contentDescription = "menu icon",
-                modifier = Modifier
-                    .padding(8.dp)
-                    .width(32.dp)
-                    .height(32.dp),
-                tint = MaterialTheme.colorScheme.onSurface
-            )
-        },
-        //search icon before the end of the bar
-        actions = {
-            Icon(
-                imageVector = Icons.Filled.Search,
-                contentDescription = "search icon",
-                modifier = Modifier
-//                    .padding(8.dp)
-                    .width(32.dp)
-                    .height(32.dp),
-                tint = MaterialTheme.colorScheme.onSurface
-            )
+@Serializable
+object main_screen
 
-            //dark & light themes switcher icon at the end of the bar
-            Button(
-                onClick = onThemeToggle,
-                colors = ButtonDefaults.buttonColors(Color.Transparent)
-                ) {
-                Icon(
-                    painter = painterResource(id = R.drawable.sunmoon2),
-                    contentDescription = "sun and moon icon",
-                    modifier = Modifier
-//                        .padding(end = 8.dp)
-                        .width(28.dp)
-                        .height(28.dp),
-                    tint = MaterialTheme.colorScheme.onSurface
-                )
-            }
-
-        }
-
-    )
-}
+@Serializable
+data class second_screen(
+    val news_index: Int
+)
+//
+//object Routes {
+//    var main_screen = "main_screen"
+//    var second_screen = "second_screen"
+//    var new0_screen = "new0_screen"
+//    var new1_screen = "new1_screen"
+//    var new2_screen = "new2_screen"
+//    var new3_screen = "new3_screen"
+//    var new4_screen = "new4_screen"
+//    var new5_screen = "new5_screen"
+//    var new6_screen = "new6_screen"
+//    var new7_screen = "new7_screen"
+//
+//
+//}
